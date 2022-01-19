@@ -1,0 +1,36 @@
+header {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: block;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  &__nav {
+    width: 120px;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-icon {
+      display: block;
+
+
+      &:hover * {
+        transition: all .3s ease-in-out;
+        stroke: $color-yellow;
+      }
+    }
+  }
+}
