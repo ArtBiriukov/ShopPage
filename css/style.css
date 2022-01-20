@@ -457,6 +457,7 @@ header {
 .parameters__select {
   position: relative;
   height: 43px;
+  color: #333333;
   padding: 12px 16px;
   margin-bottom: 12px;
   text-align: left;
