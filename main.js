@@ -220,3 +220,25 @@ formBtn.addEventListener('click', (e) => {
   e.preventDefault();
   checkInputs(emailInput);
 })
+
+
+/*desctop menu*/
+const navDesktop = document.querySelector('.nav__desktop'),
+  headerSection = document.querySelector('header'),
+  topMenuItems = document.querySelector('.topmenu');
+
+topMenuItems.addEventListener('click', (e) => {
+  const target = e.target;
+
+  if (target.closest('.nav__desktop-link') || target.closest('.down')) {
+    e.preventDefault();
+  }
+})
+
+document.addEventListener('scroll', (e) => {
+  if (headerSection.offsetHeight < document.documentElement.scrollTop) {
+    navDesktop.classList.add('show__navbar');
+  } else {
+    navDesktop.classList.remove('show__navbar');
+  }
+})
