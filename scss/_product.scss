@@ -27,6 +27,10 @@
       &:hover .product-cart__slider-overlay {
         opacity: 0;
       }
+
+      &.active-slide .product-cart__slider-overlay{
+        opacity: 0;
+      }
     }
 
     &-img {
@@ -44,12 +48,12 @@
       height: 100%;
 
       background: white;
-      opacity: 0;
+      opacity: 0.3;
       transition: all .3s ease-in-out;
 
-      &:not(.active-slide) {
-        opacity: 0.3;
-      }
+      // &:not(.active-slide) {
+      //   opacity: 0.3;
+      // }
     }
   }
 
