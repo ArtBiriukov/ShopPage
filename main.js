@@ -23,3 +23,27 @@ for (let slide of productSlides) {
     }
   })
 }
+
+/*count products*/
+const countWrapper = document.querySelector('.order__count-wrapper'),
+countInput = document.querySelector('.order__count-input');
+
+countWrapper.addEventListener('click', (e)=> {
+  const target = e.target;
+
+  if (target.classList.contains('order__count-plus')) {
+    countInput.value++;
+
+    if (countInput.value > 5) {
+      countInput.value = 5;
+    }
+  } 
+  
+  if (target.classList.contains('order__count-mines')) {
+    countInput.value--;
+
+    if (countInput.value < 0) {
+      countInput.value = 0;
+    }
+  }
+})
