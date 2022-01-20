@@ -1,12 +1,14 @@
 .product-cart {
+  margin-top: 26px;
+  margin-bottom: 32px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    margin-top: 26px;
-    margin-bottom: 32px;
+  &__photo {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 16px;
-  
+    margin-right: 16px;
+  }
 
   &__slider {
     position: absolute;
@@ -23,6 +25,10 @@
       }
 
       &:hover .product-cart__slider-overlay {
+        opacity: 0;
+      }
+
+      &.active-slide .product-cart__slider-overlay{
         opacity: 0;
       }
     }
@@ -42,12 +48,8 @@
       height: 100%;
 
       background: white;
-      opacity: 0;
+      opacity: 0.3;
       transition: all .3s ease-in-out;
-
-      &:not(.active-slide) {
-        opacity: 0.3;
-      }
     }
   }
 
