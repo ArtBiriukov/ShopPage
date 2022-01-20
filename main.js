@@ -103,7 +103,7 @@ orderBuyWrapper.addEventListener('click', (e) => {
   if (target.closest('.order__btn-basket')) {
 
     if (!messageEl) {
-      createNotification('basket', countInput.value, productTitle);
+      createNotification(target, countInput.value, productTitle);
     }
     return;
   }
@@ -113,7 +113,7 @@ orderBuyWrapper.addEventListener('click', (e) => {
     target.closest('.order__btn-favorite').classList.toggle('add__favorite');
 
     if (!messageEl) {
-      createNotification('favorite', countInput.value, productTitle);
+      createNotification(target, countInput.value, productTitle);
     }
     return;
   }
@@ -123,12 +123,23 @@ const createNotification = (btn, count, productName) => {
   const message = document.createElement('div');
   message.className = 'notification__message';
 
-  if (btn === 'basket') {
-    message.innerHTML = `Товар <b>${productName}</b> в количестве ${count} единиц добавлен в корзину`;
+  if (btn.closest('.order__btn-basket')) {
+
+    if (count > 0) {
+      message.innerHTML = `Товар <b>${productName}</b> в количестве ${count} единиц добавлен в корзину`;
+    } else {
+      message.innerHTML = `Выберите нужное количество товара!`;
+    }
   }
 
-  if (btn === 'favorite') {
-    message.innerHTML = `Товар <b>${productName}</b> добавлен в избранное`;
+  if (btn.closest('.order__btn-favorite')) {
+
+    if (!btn.closest('.add__favorite')) {
+      message.innerHTML = `Товар <b>${productName}</b> убран из избранного`;
+    } else {
+      message.innerHTML = `Товар <b>${productName}</b> добавлен в избранное`;
+    }
+
   }
 
   document.body.appendChild(message);
