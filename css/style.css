@@ -87,6 +87,22 @@ img, svg {
   background: #333333;
 }
 
+.notification__message {
+  position: fixed;
+  z-index: 100;
+  bottom: -100px;
+  right: 30px;
+  color: white;
+  width: 315px;
+  padding: 15px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  text-align: center;
+  pointer-events: none;
+}
+
 header {
   position: relative;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
@@ -490,6 +506,11 @@ header {
 }
 
 .order__btn:hover svg path {
+  stroke: red;
+  fill: red;
+}
+
+.order__btn.add__favorite svg path {
   stroke: red;
   fill: red;
 }

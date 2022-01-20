@@ -162,6 +162,11 @@
       fill: red;
     }
 
+    &.add__favorite svg path {
+      stroke: red;
+      fill: red;
+    }
+
     &-basket {
       padding: 11px 28px;
     }
