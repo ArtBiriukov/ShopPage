@@ -71,3 +71,27 @@ selectWrapper.addEventListener('click', (e)=> {
   }
 
 })
+
+
+/*mobile menu*/
+
+const navMobile = document.querySelector('.nav__mobile');
+
+const showMenu = () => {
+  navMobile.classList.toggle('show-menu');
+};
+
+document.addEventListener('click', (e)=> {
+  let target = e.target;
+
+  if (target.closest('.mobile__menu') || target.closest('.nav__mobile-close')) {
+    e.preventDefault();
+    showMenu();
+  } else {
+
+      if (!target.closest('.nav__mobile') && navMobile.classList.contains('show-menu')) {
+        showMenu();
+      }
+  }
+
+})

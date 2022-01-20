@@ -886,6 +886,9 @@ header {
     display: -ms-flexbox;
     display: flex;
   }
+  .nav__desktop {
+    display: none;
+  }
   .nav__mobile {
     display: block;
     position: absolute;
