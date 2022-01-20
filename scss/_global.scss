@@ -7,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 body {
-  height: 100vh;
   color: $color-black;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -16,15 +15,12 @@ body {
   letter-spacing: 0.04em;
 }
 
-ul {
-  list-style: none;
-}
-
 li {
   list-style: none;
 }
 
 a {
+  width: max-content;
   display: inline-block;
   text-decoration: none;
   color: $color-black;
@@ -35,7 +31,7 @@ a {
   }
 }
 
-img {
+img, svg {
   display: block;
 }
 
@@ -55,4 +51,30 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mobile__menu, .nav__mobile {
+  display: none;
+}
+
+.btn {
+  width: max-content;
+  padding: 8px 25px;
+  background: transparent;
+  border: 1px solid $color-black;
+
+  font-family: Open Sans;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+
+  color: $color-black;
+
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: #fff;
+    background: $color-black;
+  }
 }
