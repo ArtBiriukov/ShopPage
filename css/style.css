@@ -370,7 +370,7 @@ header {
   transition: all .3s ease-in-out;
 }
 
-.parameters__select.open-select .parameters__select:after {
+.parameters__select.open-select.parameters__select:after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }

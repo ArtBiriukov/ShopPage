@@ -47,3 +47,27 @@ countWrapper.addEventListener('click', (e)=> {
     }
   }
 })
+
+/*size select*/
+const selectWrapper = document.querySelector('.parameters__select__wrapper');
+const sizeSelectBtn = document.querySelector('.parameters__select');
+
+const openSelect = (btn) => {
+  btn.classList.toggle('open-select')
+}
+
+selectWrapper.addEventListener('click', (e)=> {
+  const target = e.target;
+
+  if (target.classList.contains('parameters__select')) {
+    openSelect(sizeSelectBtn);
+  }
+
+  if (target.classList.contains('parameters__select-item')) {
+    let text = target.innerText;
+
+    sizeSelectBtn.innerText = text;
+    openSelect(sizeSelectBtn);
+  }
+
+})
