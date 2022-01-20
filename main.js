@@ -1,5 +1,4 @@
 /*Смена фотографий */
-
 const productSlides = document.querySelectorAll('.product-cart__slider-slide'),
   productImg = document.querySelector('.product-cart__img');
 
@@ -72,7 +71,6 @@ selectWrapper.addEventListener('click', (e) => {
 })
 
 /*mobile menu*/
-
 const navMobile = document.querySelector('.nav__mobile');
 
 const showMenu = () => {
@@ -95,7 +93,6 @@ document.addEventListener('click', (e) => {
 })
 
 /*notifications*/
-
 const orderBuyWrapper = document.querySelector('.order__buy'),
   productTitle = document.querySelector('.product-cart__title').innerText;
 
@@ -148,3 +145,67 @@ const createNotification = (btn, count, productName) => {
 
   }, 3000);
 }
+
+/*valid input email*/
+const formBtn = document.getElementById('send'),
+  emailInput = document.querySelector('.footer__form-input'),
+  btnClearInput = document.querySelector('.footer__form-icon');
+
+/*отчистка инпута*/
+btnClearInput.addEventListener('click', () => {
+  emailInput.value = '';
+
+  if (emailInput.classList.contains('error')) {
+    document.querySelector('.footer__form-message').remove();
+    emailInput.classList.remove('error');
+  } else if (emailInput.classList.contains('success')) {
+    emailInput.classList.remove('success');
+  }
+})
+
+/*функция проверки поля*/
+const checkInputs = (target) => {
+  const regExpEmail = /^\w+@\w+\.\w{2,}$/;
+
+  const creatErrMes = (target) => {
+    const mesEl = document.createElement('div');
+    mesEl.classList.add('footer__form-message');
+    mesEl.innerText = 'Email должен иметь вид name@name.com';
+
+    target.after(mesEl);
+  }
+
+  const checkGood = () => {
+    target.classList.add('success');
+    target.classList.remove('error');
+
+    const messageError = document.querySelector('.footer__form-message');
+    if (messageError) {
+      messageError.remove();
+    }
+  };
+
+  const checkBed = () => {
+    target.classList.remove('success');
+    target.classList.add('error');
+
+    const messageError = document.querySelector('.footer__form-message');
+    if (!messageError) {
+      creatErrMes(target);
+    }
+    return;
+  };
+
+  if (regExpEmail.test(target.value)) {
+    checkGood();
+  } else {
+    checkBed();
+  }
+};
+
+// emailInput.addEventListener('input', e => checkInputs(e.target));
+
+formBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  checkInputs(emailInput);
+})
