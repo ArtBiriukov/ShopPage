@@ -2,31 +2,24 @@
   display: flex;
   justify-content: space-between;
 
+  margin: 0 117px;
+
   padding-top: 12px;
   padding-bottom: 70px;
-
-  margin: 0 117px;
 
   &__title {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0.04em;
 
     margin-bottom: 16px;
   }
 
   &__nav {
-    display: flex;
-
-    &-col {
-      width: 335px;
-
-      &:not(:first-child) {
-        margin-left: 16px;
-      }
-    }
+    display: grid;
+    grid-template-columns: 335px 335px;
+    grid-column-gap: 16px;
 
     &-item {
       &:not(:last-child) {
@@ -41,19 +34,23 @@
     flex-direction: column;
     align-items: flex-end;
 
-    &-header{
+    &-header {
       width: inherit;
       margin-bottom: 41px;
+    }
+
+    &-title {
+      margin-bottom: 0;
     }
 
     &-wrapper {
       position: relative;
       width: inherit;
+      margin-bottom: 35px;
     }
 
     &-input {
       width: inherit;
-      margin-bottom: 35px;
 
       font-family: Open Sans;
       font-size: 14px;

@@ -31,7 +31,12 @@ a {
   }
 }
 
-img, svg {
+img {
+  width: 100%;
+  display: block;
+}
+
+svg {
   display: block;
 }
 
@@ -91,5 +96,5 @@ img, svg {
   transition-duration: 0.5s;
 
   text-align: center;
-  pointer-events: none;  
+  pointer-events: none;
 }
