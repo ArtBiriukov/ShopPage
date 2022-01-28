@@ -880,7 +880,6 @@ header {
 
 .footer__form-message {
   position: absolute;
-  bottom: 6px;
   left: 60px;
   color: red;
   font-weight: 600;
@@ -1031,6 +1030,9 @@ header {
   }
   .footer__form-title {
     width: 274px;
+  }
+  .footer__form-message {
+    left: 10px;
   }
 }
 
