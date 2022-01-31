@@ -98,34 +98,46 @@ const orderBuyWrapper = document.querySelector('.order__buy'),
 
 orderBuyWrapper.addEventListener('click', (e) => {
   const target = e.target,
-    messageEl = document.querySelector('.notification__message');
+    messageElements = document.querySelectorAll('.notification__message');
 
   if (target.closest('.order__btn-basket')) {
-
-    if (!messageEl) {
-      createNotification(target, countInput.value, productTitle);
-    }
-    return;
+    createNotification(target, countInput.value, productTitle);
   }
 
   if (target.closest('.order__btn-favorite')) {
 
     target.closest('.order__btn-favorite').classList.toggle('add__favorite');
 
-    if (!messageEl) {
-      createNotification(target, countInput.value, productTitle);
-    }
-    return;
+    createNotification(target, countInput.value, productTitle);
+  }
+
+  if (messageElements.length) {
+    messageElements.forEach(messageElement => {
+      removeNotificMessage(messageElement);
+    })
   }
 })
 
+/*Удаление напоминаний */
+const removeNotificMessage = (messageItem) => {
+  setTimeout(() => {
+    messageItem.style.opacity = '0';
+
+    setTimeout(() => {
+      messageItem.remove();
+    }, 300);
+
+  }, 3000);
+}
+
+/*Создание напоминаний и наполнение их информацией */
 const createNotification = (btn, count, productName) => {
+
   const message = document.createElement('div');
   message.className = 'notification__message';
 
   if (btn.closest('.order__btn-basket')) {
-
-    if (count > 0) {
+    if (count != 0) {
       message.innerHTML = `Товар <b>${productName}</b> в количестве ${count} единиц добавлен в корзину`;
     } else {
       message.innerHTML = `Выберите нужное количество товара!`;
@@ -139,22 +151,13 @@ const createNotification = (btn, count, productName) => {
     } else {
       message.innerHTML = `Товар <b>${productName}</b> добавлен в избранное`;
     }
-
   }
 
-  document.body.appendChild(message);
+  const notificationContainer = document.querySelector('.notification__container');
 
-  const hightMes = message.clientHeight;
-  message.style.bottom += `${hightMes - 10}px`;
+  notificationContainer.appendChild(message);
 
-  setTimeout(() => {
-    message.style.bottom = '-100px';
-
-    setTimeout(() => {
-      message.remove();
-    }, 300);
-
-  }, 3000);
+  removeNotificMessage(message);
 }
 
 /*valid input email*/
@@ -219,23 +222,13 @@ const checkInputs = (target) => {
 formBtn.addEventListener('click', (e) => {
   e.preventDefault();
   checkInputs(emailInput);
-})
-
+});
 
 /*desctop menu*/
 const navDesktop = document.querySelector('.nav__desktop'),
-  headerSection = document.querySelector('header'),
-  topMenuItems = document.querySelector('.topmenu');
+  headerSection = document.querySelector('header');
 
-topMenuItems.addEventListener('click', (e) => {
-  const target = e.target;
-
-  if (target.closest('.nav__desktop-link') || target.closest('.down')) {
-    e.preventDefault();
-  }
-})
-
-document.addEventListener('scroll', (e) => {
+document.addEventListener('scroll', () => {
   if (headerSection.offsetHeight < document.documentElement.scrollTop) {
     navDesktop.classList.add('show__navbar');
   } else {
