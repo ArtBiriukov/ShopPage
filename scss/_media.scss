@@ -1,5 +1,4 @@
 @media screen and (max-width: 1389px) {
-
   .catalog-products {
     &__content {
       grid-column-gap: 0;
@@ -22,7 +21,7 @@
 }
 
 @media screen and (max-width: 1140px) {
-  header {
+  .header {
     padding-top: 18px;
     padding-bottom: 24px;
   }
@@ -55,7 +54,6 @@
 }
 
 @media screen and (max-width: 685px) {
-
   .catalog-products {
     margin-bottom: 30px;
 
@@ -85,7 +83,6 @@
 }
 
 @media screen and (max-width: 425px) {
-
   main.container {
     padding: 0;
   }
@@ -143,7 +140,6 @@
   }
 
   .footer {
-
     &__nav {
       grid-template-columns: 163px 163px;
     }
@@ -163,7 +159,6 @@
 }
 
 @media screen and (max-width: 375px) {
-
   .container {
     padding-left: calc(50% - 167px);
     padding-right: calc(50% - 167px);

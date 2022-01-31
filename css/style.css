@@ -239,8 +239,9 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0 15px;
 }
 
 .header__nav {
@@ -260,8 +261,8 @@ header {
 }
 
 .header__nav-icon:hover * {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   stroke: #DCAE59;
 }
 
@@ -927,7 +928,7 @@ header {
 }
 
 @media screen and (max-width: 1140px) {
-  header {
+  .header {
     padding-top: 18px;
     padding-bottom: 24px;
   }
