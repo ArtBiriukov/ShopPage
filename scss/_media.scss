@@ -21,11 +21,6 @@
 }
 
 @media screen and (max-width: 1140px) {
-  .header {
-    padding-top: 18px;
-    padding-bottom: 24px;
-  }
-
   .container {
     padding-left: calc(50% - 343px);
     padding-right: calc(50% - 343px);
@@ -90,10 +85,6 @@
   .container {
     padding-left: calc(50% - 192px);
     padding-right: calc(50% - 192px);
-  }
-
-  .nav__desktop {
-    display: none;
   }
 
   .mobile__menu {

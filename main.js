@@ -225,13 +225,13 @@ formBtn.addEventListener('click', (e) => {
 });
 
 /*desctop menu*/
-const navDesktop = document.querySelector('.nav__desktop'),
+const navFix = document.querySelector('.nav__fix'),
   headerSection = document.querySelector('header');
 
 document.addEventListener('scroll', () => {
   if (headerSection.offsetHeight < document.documentElement.scrollTop) {
-    navDesktop.classList.add('show__navbar');
+    navFix.classList.add('show__navbar');
   } else {
-    navDesktop.classList.remove('show__navbar');
+    navFix.classList.remove('show__navbar');
   }
 })
