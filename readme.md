@@ -4,7 +4,7 @@
 
 ## Демо
 
-https://artbiryukov.github.io/ShopPage/
+[Ссылка на страницу](https://artbiriukov.github.io/ShopPage/)
 
 ## Технологии 
 <ul>
